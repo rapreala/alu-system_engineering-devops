@@ -1,8 +1,20 @@
-#!/usr/bin/env bash 
-# installing Nginx and performing actions
-apt-get update -y
-apt-get install nginx -y
-# Configure Nginx
-echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
-# Restart Nginx 
-sudo service nginx restart
+#!/usr/bin/env bash
+# a Bash script that sets up Nginx on a server.
+
+apt update
+apt install -y nginx
+
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+
+echo "Holberton School" >> /etc/nginx/html/index.html
+
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+"> /etc/nginx/sites-available/default
+
+service nginx restart
