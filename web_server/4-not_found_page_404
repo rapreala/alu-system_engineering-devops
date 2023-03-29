@@ -3,14 +3,14 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo chown -R "$USER":"$USER" /var/www/html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/err404.html
 
 config_file=\
 "server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	server_name _;
-	error_page 404 /404.html;
+	error_page 404 /err404.html;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 #	location / {
