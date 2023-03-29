@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 10em;
+            margin-top: 0;
+            animation: spin 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+                color: #ff0000;
+            }
+            25% {
+                transform: rotate(90deg);
+                color: #00ff00;
+            }
+            50% {
+                transform: rotate(180deg);
+                color: #0000ff;
+            }
+            75% {
+                transform: rotate(270deg);
+                color: #ffff00;
+            }
+            100% {
+                transform: rotate(360deg);
+                color: #ff00ff;
+            }
+        }
+        
+        p {
+            font-size: 2em;
+        }
+        
+        span {
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>404</h1>
+    <p>Ceci n'est pas une page.</p>
+</body>
+
+</html>
