@@ -1,0 +1,5 @@
+#
+# This script sets up port forwarding from port 8080 to port 80 using iptables
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination         
+REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:8080 redir ports 80
