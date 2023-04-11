@@ -1,27 +1,13 @@
 #!/usr/bin/env bash
-# This script installs the 'ufw' firewall and sets up rules on 'web-01'
+# bash script that  installs the 'ufw' firewall and,
+# setup a few rules on 'web-01'
 
-# Update package lists and install ufw
-sudo apt-get update
-sudo apt-get install -y ufw
-
-# Enable IPv6 support for ufw
-sudo sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
-
-# Disable ufw to ensure a clean start before applying new rules
-sudo ufw disable
-
-# Enable ufw
-sudo ufw enable
-
-# Set default policies for incoming and outgoing traffic
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-
-# Allow incoming traffic on specific ports (SSH, HTTP, and HTTPS)
-sudo ufw allow 22/tcp
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
-
-# Show the status of ufw with the applied rules
-sudo ufw status verbose
+apt-get install ufw
+sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
+ufw disable
+ufw enable
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
