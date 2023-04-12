@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Install and configure Nginx to use port 8080 instead of port 80
-brew install nginx
-sed -i 's/80/8080/g' /usr/local/etc/nginx/nginx.conf
-brew services start nginx
+apt-get install nginx -y
+sed -i 's/80/8080/g' /etc/nginx/nginx.conf
+service nginx start
